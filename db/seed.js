@@ -1,4 +1,4 @@
-const {  
+const {
   client,
   createUser,
   updateUser,
@@ -10,6 +10,7 @@ const {
   getPostsByUser,
   addTagsToPost,
   createTags,
+  getAllTags,
   getPostsByTagName
 } = require('./index');
 
@@ -76,19 +77,19 @@ async function createInitialUsers() {
   try {
     console.log("Starting to create users...");
 
-    await createUser({ 
-      username: 'albert', 
+    await createUser({
+      username: 'albert',
       password: 'bertie99',
       name: 'Al Bert',
-      location: 'Sidney, Australia' 
+      location: 'Sidney, Australia'
     });
-    await createUser({ 
-      username: 'sandra', 
+    await createUser({
+      username: 'sandra',
       password: '2sandy4me',
       name: 'Just Sandra',
       location: 'Ain\'t tellin\''
     });
-    await createUser({ 
+    await createUser({
       username: 'glamgal',
       password: 'soglam',
       name: 'Joshua',
@@ -141,8 +142,8 @@ async function createInitialTags() {
     console.log("Starting to create tags...");
 
     const [happy, sad, inspo, catman] = await createTags([
-      '#happy', 
-      '#worst-day-ever', 
+      '#happy',
+      '#worst-day-ever',
       '#youcandoanything',
       '#catmandoeverything'
     ]);
